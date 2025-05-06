@@ -44,7 +44,7 @@ const WalletDashboard: React.FC = () => {
   const totalUsd = assetList.reduce((sum, item) => sum + item.usdValue, 0);
 
   return (
-    <div style={{ maxWidth: 400, margin: '0 auto', padding: 24, background: '#f7f7f7', borderRadius: 8 }}>
+    <div style={{ maxWidth: 400, margin: '100px auto', padding: 24, background: '#f7f7f7', borderRadius: 8 }}>
       {/* 调试信息 */}
       <div style={{ background: '#ffe', color: '#333', padding: 12, borderRadius: 6, marginBottom: 16, fontSize: 14 }}>
         <div><b>调试信息：</b></div>
@@ -55,7 +55,7 @@ const WalletDashboard: React.FC = () => {
         ))}
         <div><b>总资产：</b> {totalUsd.toFixed(4)} USD</div>
       </div>
-      <div style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 24, textAlign: 'center' }}>
+      <div style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 24, textAlign: 'center', color: '#333' }}>
         $ {totalUsd.toFixed(2)} USD
       </div>
       <div>
@@ -64,9 +64,9 @@ const WalletDashboard: React.FC = () => {
             <div style={{ width: 32, height: 32, marginRight: 12, background: '#eee', borderRadius: '50%', overflow: 'hidden' }}>
               {item.icon ? <img src={item.icon} alt={item.symbol} style={{ width: 32, height: 32 }} /> : null}
             </div>
-            <div style={{ flex: 1 }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ fontWeight: 500 }}>{item.name}</div>
-              <div style={{ color: '#888', fontSize: 12 }}>{item.balance} {item.unit}</div>
+              <div style={{ color: '#333', fontSize: 12 }}>{item.balance} {item.unit}</div>
             </div>
             <div style={{ textAlign: 'right' }}>
               <div style={{ fontWeight: 500 }}>$ {item.usdValue.toFixed(2)}</div>
