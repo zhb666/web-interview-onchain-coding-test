@@ -71,13 +71,13 @@ const AssetCard: React.FC<{ asset: Asset }> = ({ asset }) => {
       >
         {asset.icon ? <img src={asset.icon} alt={asset.symbol} style={{ width: 32, height: 32 }} /> : null}
       </div>
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column' , color: '#333'}}>
         <div style={{ fontWeight: 500 }}>{asset.name}</div>
-        <div style={{ color: '#666', fontSize: 12 }}>{asset.balance} {asset.unit}</div>
+        
       </div>
       <div style={{ textAlign: 'right' }}>
-        <div style={{ fontWeight: 500 }}>$ {asset.usdValue.toFixed(2)}</div>
-        <div style={{ color: '#666', fontSize: 10 }}>1 {asset.symbol} = ${asset.usdRate.toFixed(2)}</div>
+        <div style={{ color: '#666', fontSize: 12 }}>{asset.balance} {asset.unit}</div>
+        <div style={{ color: '#666', fontSize: 10 }}>${asset.usdValue.toFixed(2)}</div>
       </div>
     </div>
   );
@@ -145,7 +145,7 @@ const WalletDashboard: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 800);
+    }, 1000);
     
     return () => clearTimeout(timer);
   }, []);
